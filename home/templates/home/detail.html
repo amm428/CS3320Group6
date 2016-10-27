@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block title %}{{recipe.recipeTitle}}{% endblock %}
+{% block body %}
+
+    <img src = "{{recipe.recipeImage.url}}" style="width: 450px; height: 450px">
+
+    <h1>{{recipe.recipeTitle}}
+
+    <!--Edit-->
+    <a href="{% url 'home:recipe-update' recipe.id %}" style = "font-size:50%;">edit</a></h1>
+
+    <h3>{{recipe.mealType}}</h3>
+
+    <strong>Ingredients:</strong>
+    <ul>{{recipe.ingredients | linebreaks}}</ul>
+
+    <strong>Directions:</strong>
+    <ul>{{recipe.directions | linebreaks}}</ul>
+
+{% endblock %}

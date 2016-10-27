@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+
+        <h3>Appetizers:</h3>
+        <ul>
+            {% for recipe in all_recipes %}
+            <!-- Listing of recipe -->
+            <li><a href= "{% url 'home:detail' recipe.id %}">{{ recipe.recipeTitle}}
+                <img src = "{{recipe.recipeImage.url}}" style="width: 80px; height:70px">
+
+                </a> </li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
